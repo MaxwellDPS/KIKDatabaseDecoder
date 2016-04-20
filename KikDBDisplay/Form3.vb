@@ -35,4 +35,13 @@ Public Class Form3
             MsgBox("Error Creating Database")
         End Try
     End Sub
+
+    Private Sub Form3_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        Try
+            If My.Application.CommandLineArgs IsNot Nothing Then
+                OpenCase(My.Application.CommandLineArgs(0))
+            End If
+        Catch
+        End Try
+    End Sub
 End Class
